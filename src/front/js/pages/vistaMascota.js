@@ -41,11 +41,11 @@ import logoOscuro from "../../img/logo-mascotapp_oscuro.gif"
     
     return(
         
-    <div className="container">
-        <div>
+    <div className="container min-vh-100">
+        <div className="mt-4">
         <button 
             type="button" 
-            className="btn btn-outline-dark btn-sm mt-4" 
+            className="btn btn-outline-dark btn-sm" 
             onClick={handleBack}><i className="fa-solid fa-arrow-left-long"></i></button>
         </div>
         <div className="conteiner" style={{minHeight: "100vh"}}>
