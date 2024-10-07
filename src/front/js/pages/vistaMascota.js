@@ -41,14 +41,18 @@ import logoOscuro from "../../img/logo-mascotapp_oscuro.gif"
     
     return(
         
-    <div className="container min-vh-100">
-        <div className="mt-4">
-        <button 
-            type="button" 
-            className="btn btn-outline-dark btn-sm" 
-            onClick={handleBack}><i className="fa-solid fa-arrow-left-long"></i></button>
+    <div className="container min-vh-100 border">
+        {/* back button */}
+        <div className="mt-4 border">
+            <button 
+                type="button" 
+                className="btn btn-outline-dark btn-sm" 
+                onClick={handleBack}>
+                    <i className="fa-solid fa-arrow-left-long"></i>
+            </button>
         </div>
-        <div className="conteiner" style={{minHeight: "100vh"}}>
+
+        {/* <div className="border"> */}
             <MascotaPost 
             id = {mascota.id}
             nombre={mascota.nombre}
@@ -69,7 +73,7 @@ import logoOscuro from "../../img/logo-mascotapp_oscuro.gif"
             coord_x={mascota.coord_x}
             coord_y={mascota.coord_y}
         />
-        </div>
+        {/* </div> */}
         
     </div>
     
