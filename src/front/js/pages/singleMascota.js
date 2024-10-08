@@ -1,12 +1,12 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useParams, useLocation, useNavigate } from "react-router-dom";
-import MascotaPost from "../component/mascotaPost";
+import MascotaSingle from "../component/singleMascota/mascotaSingle";
 import { Context } from "../store/appContext";
 import logoOscuro from "../../img/logo-mascotapp_oscuro.gif"
 
 
 
- export const VistaMascota = () => {
+export const SingleMascota = () => {
 
     const { store } = useContext(Context);
     const { theid } = useParams();
@@ -21,7 +21,7 @@ import logoOscuro from "../../img/logo-mascotapp_oscuro.gif"
             setMascota(findMascota);
         }
 
-        
+
     }, [store.mascotas, theid]); // Agregar store.mascotas y theid a las dependencias
 
     if (!mascota) {
@@ -38,48 +38,48 @@ import logoOscuro from "../../img/logo-mascotapp_oscuro.gif"
         }
     };
 
-    
-    return(
-        
-    <div className="container min-vh-100">
-        {/* back button */}
-        <div className="mt-4">
-            <button 
-                type="button" 
-                className="btn btn-outline-dark btn-sm" 
-                onClick={handleBack}>
+
+    return (
+
+        <div className="container min-vh-100">
+            {/* back button */}
+            <div className="mt-4">
+                <button
+                    type="button"
+                    className="btn btn-outline-dark btn-sm"
+                    onClick={handleBack}>
                     <i className="fa-solid fa-arrow-left-long"></i>
-            </button>
+                </button>
+            </div>
+
+            {/* <div className="border"> */}
+            <MascotaSingle
+                id={mascota.id}
+                nombre={mascota.nombre}
+                fechaReg={mascota.fecha_registro}
+                fechaPerdido={mascota.fecha_perdido}
+                especie={mascota.especie_name}
+                raza={mascota.raza_name}
+                departamento={mascota.departamento_name}
+                localidad={mascota.localidad_name}
+                estado={mascota.estado}
+                descripcion={mascota.descripcion}
+                edad={mascota.edad}
+                sexo={mascota.sexo}
+                imagen={mascota.url_image}
+                email={mascota.user_email}
+                telefono={mascota.user_telefono}
+                nombreUser={mascota.user_name}
+                coord_x={mascota.coord_x}
+                coord_y={mascota.coord_y}
+            />
+            {/* </div> */}
+
         </div>
 
-        {/* <div className="border"> */}
-            <MascotaPost 
-            id = {mascota.id}
-            nombre={mascota.nombre}
-            fechaReg={mascota.fecha_registro}
-            fechaPerdido={mascota.fecha_perdido}
-            especie={mascota.especie_name}
-            raza={mascota.raza_name}
-            departamento={mascota.departamento_name}
-            localidad={mascota.localidad_name}
-            estado={mascota.estado}
-            descripcion={mascota.descripcion}
-            edad={mascota.edad}
-            sexo={mascota.sexo}
-            imagen={mascota.url_image}
-            email={mascota.user_email}
-            telefono={mascota.user_telefono}
-            nombreUser={mascota.user_name}
-            coord_x={mascota.coord_x}
-            coord_y={mascota.coord_y}
-        />
-        {/* </div> */}
-        
-    </div>
-    
 
-)
-    
+    )
+
 
 }
 

@@ -80,6 +80,11 @@
     color: white;
 }
 
+.badge-UBICACION {
+    background: gray;
+    color: white;
+}
+
 .badge-overlay {
     position: absolute;
     top: 10px; /* Ajusta para la posición vertical */
@@ -93,7 +98,7 @@
 
 .badge {
     padding: 5px 10px;
-    font-size: 0.75rem;
+    font-size: 0.75rem !important;
     border-radius: 5px;
     color: white;
 }
