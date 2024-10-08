@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 import "../../styles/mascotaCard.css"
-
+//
 const MascotaCard = (props) => {
     const { store } = useContext(Context)
     const navigate = useNavigate();

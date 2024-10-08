@@ -2,40 +2,72 @@ import React, { useContext, useEffect } from "react";
 import { Context } from "../store/appContext";
 import { useParams } from "react-router-dom";
 import "../../styles/mascotaPost.css";
+import "../../styles/mascotaCard.css"
 import { MapComp } from "../component/mapComp.js";
 
 
 const MascotaPost = (props) => {
     const { store } = useContext(Context);
 
+    const getBadgeClass = (estado) => {
+        switch (estado) {
+            case 'PERDIDO':
+                return 'badge-PERDIDO';
+            case 'ENCONTRADO':
+                return 'badge-ENCONTRADO';
+            case 'REUNIDO':
+                return 'badge-REUNIDO';
+            case 'ADOPCION':
+                return 'badge-ADOPCION';
+        }
+    };
+
     return (
 
         <div className="min-vh-100">
             
             {/* title */}
-            <h1 className="text-center border" style={{marginTop: "40px", marginBottom: "40px", fontFamily: "Montserrat", textShadow: "1px 1px 1px #aaa"}}>
-                {props.estado === "PERDIDO" ? "Estoy perdido!" :
-                props.estado === "ENCONTRADO" ? "Estoy buscando a mi familia!" :
-                props.estado === "ADOPCION" ? "En adopción" :
-                props.estado === "REUNIDO" ? "Final feliz" : ""}
-            </h1>
+            {/* <h1 className="text-center border" style={{marginTop: "40px", marginBottom: "40px", fontFamily: "Montserrat", textShadow: "1px 1px 1px #aaa"}}>
+                {props.estado === "PERDIDO" ? (
+                    <div className={`badge ${getBadgeClass(props.estado)}`}>
+                        {props.estado}
+                    </div>
+                ) :
+                props.estado === "ENCONTRADO" ? (
+                    <div className={`badge ${getBadgeClass(props.estado)}`}>
+                        {props.estado}
+                    </div>
+                ) :
+                props.estado === "ADOPCION" ? (
+                    <div className={`badge ${getBadgeClass(props.estado)}`}>
+                        {props.estado}
+                    </div>
+                ) :
+                props.estado === "REUNIDO" ? (
+                    <div className={`badge ${getBadgeClass(props.estado)}`}>
+                        {props.estado}
+                    </div>
+                ) : ""}
+            </h1> */}
 
             {/* Contenedor de la card */}
-            <div className="container d-flex justify-content-center w-100 p-0 border">
+            <div className="container d-flex justify-content-center w-100 p-0">
 
-                <div className="card mb-3 w-100" id="perrito">
+                <div className="card border-0 mb-3 w-100" id="perrito">
 
                     <div className="row">
 
                         {/* image container */}
-                        <div className="col-md-6">
-                            <img src={props.imagen} className="img-fluid" style={{ minWidth: "20rem", maxHeight: "30rem", objectFit: "cover" }} alt="Mascota" />
+                        <div className="col-md-6 d-flex justify-content-center">
+                            <div className="image-box rounded-3 bg-light shadow-sm d-flex justify-content-center w-100 my-3 p-4" style={{ height: "30rem"}}>
+                                <img src={props.imagen} className="img-fluid" style={{ objectFit: "contain" }} alt="Mascota" />
+                            </div>
                         </div>
         
                         {/* Condicionales para mostrar datos de la mascota según su ESTADO (perdido, encontrado, adopción, reunido)  */}
                         {props.estado === "PERDIDO" ? (
-                        <div className="col-md-6">
-                            <div className="cardBody" style={{"display": "grid", padding: "20px"}}>
+                        <div className="col-md-6 d-flex justify-content-center">
+                            <div className="info-box rounded-1 shadow-sm w-100 my-3 p-4">
                                 <p><strong>Nombre: </strong> {props.nombre}</p>
                                 <p><strong>Especie: </strong> {props.especie}</p>
                                 <p><strong>Raza: </strong> {props.raza}</p>

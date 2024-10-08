@@ -41,9 +41,9 @@ import logoOscuro from "../../img/logo-mascotapp_oscuro.gif"
     
     return(
         
-    <div className="container min-vh-100 border">
+    <div className="container min-vh-100">
         {/* back button */}
-        <div className="mt-4 border">
+        <div className="mt-4">
             <button 
                 type="button" 
                 className="btn btn-outline-dark btn-sm" 
