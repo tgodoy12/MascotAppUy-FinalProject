@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "../../../styles/infoDescription.css"
 
 const InfoDescription = (props) => {
 
@@ -39,11 +40,11 @@ const InfoDescription = (props) => {
                     </div>
                 ) : (
                     <>
-                        <ul className="nav nav-tabs">
+                        <ul className="nav nav-tabs mt-4">
                             <li className="nav-item">
                                 <p
                                     role="button"
-                                    className={`nav-link ${navItem === "descripcion" ? "active" : ""}`}
+                                    className={`info-nav-link nav-link ${navItem === "descripcion" ? "active" : ""}`}
                                     onClick={() => setNavItem("descripcion")}
                                 >
                                     Descripción
@@ -53,7 +54,7 @@ const InfoDescription = (props) => {
                             <li className="nav-item">
                                 <p
                                     role="button"
-                                    className={`nav-link ${navItem === "info" ? "active" : ""}`}
+                                    className={`info-nav-link nav-link ${navItem === "info" ? "active" : ""}`}
                                     onClick={() => setNavItem("info")}
                                 >
                                     + Info
@@ -62,21 +63,49 @@ const InfoDescription = (props) => {
                         </ul>
 
                         {navItem === "descripcion" ? (
-                            <p><strong>Descripción: </strong> {props.descripcion}</p>
+                            <div className="description mt-4 border p-3">
+
+                                <p className="info-text">{props.descripcion}</p>
+
+                            </div>
                         ) : (
                             <>
-                                <p><strong>Especie: </strong> {props.especie}</p>
+                                <table class="table table-striped">
+                                    
+                                    <tbody>
+                                        <tr>
+                                        <th scope="row">Especie</th>
+                                        <td>Mark</td>
+                                        <td>Otto</td>
+                                        <td>@mdo</td>
+                                        </tr>
+                                        <tr>
+                                        <th scope="row">Raza</th>
+                                        <td>Jacob</td>
+                                        <td>Thornton</td>
+                                        <td>@fat</td>
+                                        </tr>
+                                        <tr>
+                                        <th scope="row">Edad</th>
+                                        <td colspan="2">Larry the Bird</td>
+                                        <td>@twitter</td>
+                                        </tr>
+                                    </tbody>
+                                    </table>
+                                {/* <p><strong>Especie: </strong> {props.especie}</p>
                                 <p><strong>Raza: </strong> {props.raza}</p>
                                 <p><strong>Edad: </strong> {props.edad}</p>
-                                <p><strong>Sexo: </strong> {props.sexo}</p> {/* Corrección aquí */}
+                                <p><strong>Sexo: </strong> {props.sexo}</p> 
                                 <p><strong>Fecha de perdido: </strong> {props.fechaPerdido}</p>
-                                <p><strong>Se perdió en: </strong> {props.localidad}, {props.departamento}</p>
+                                <p><strong>Se perdió en: </strong> {props.localidad}, {props.departamento}</p> */}
                             </>
                         )}
                     </>
                 )}
 
-                <button className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" style={{ border: "none", backgroundColor: "#FF8A5B", margin: "0 auto", borderRadius: "20px", color: "#040926", fontWeight: "500" }}>Contactar al dueño</button>
+                
+            {/* boton de contactar al dueño */}
+                <button className="btn btn-primary mt-5" data-bs-toggle="modal" data-bs-target="#exampleModal" style={{ border: "none", backgroundColor: "#FF8A5B", margin: "0 auto", borderRadius: "20px", color: "#040926", fontWeight: "500" }}>Contactar al dueño</button>
                 <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div className="modal-dialog">
                         <div className="modal-content">
