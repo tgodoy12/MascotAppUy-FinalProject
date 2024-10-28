@@ -25,7 +25,7 @@ const InfoDescription = (props) => {
         <div className="col-md-6 d-flex justify-content-center">
             <div className="info-box rounded-1 shadow-sm w-100 my-3 p-5">
                 
-                <div className="d-flex align-items-center">
+                <div className="d-flex align-items-center mb-2">
                     <h2 className="mb-0 me-4">
                         <strong>{props.nombre}</strong>
                     </h2>
@@ -36,9 +36,9 @@ const InfoDescription = (props) => {
                 </div>
                
                 
-                <div className="mb-1 text-lowercase">
+                <div className="mb-1 text-lowercase ms-2">
                     <i class="fa-solid fa-location-dot me-2"></i>
-                     {props.localidad}, {props.departamento}
+                    <span className="info-location">{props.localidad}, {props.departamento}</span>
                 </div>
 
                 
@@ -113,7 +113,7 @@ const InfoDescription = (props) => {
 
                 
             {/* boton de contactar al dueño */}
-                <button className="btn btn-primary mt-5" data-bs-toggle="modal" data-bs-target="#exampleModal" style={{ border: "none", backgroundColor: "#FF8A5B", margin: "0 auto", borderRadius: "20px", color: "#040926", fontWeight: "500" }}>Contactar al dueño</button>
+                {/* <button className="btn btn-primary mt-5" data-bs-toggle="modal" data-bs-target="#exampleModal" style={{ border: "none", backgroundColor: "#FF8A5B", margin: "0 auto", borderRadius: "20px", color: "#040926", fontWeight: "500" }}>Contactar al dueño</button>
                 <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div className="modal-dialog">
                         <div className="modal-content">
@@ -136,7 +136,7 @@ const InfoDescription = (props) => {
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> */}
             </div>
         </div>
     )
