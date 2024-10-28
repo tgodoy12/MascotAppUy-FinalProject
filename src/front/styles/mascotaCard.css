@@ -68,6 +68,7 @@
 .badge-ENCONTRADO {
     background-color: #EA526F;
     color: white;
+  
 }
 
 .badge-ADOPCION {
@@ -98,7 +99,7 @@
 
 .badge {
     padding: 5px 10px;
-    font-size: 0.75rem !important;
+    font-size: 0.60rem !important;
     border-radius: 5px;
     color: white;
 }

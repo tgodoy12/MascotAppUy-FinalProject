@@ -23,16 +23,25 @@ const InfoDescription = (props) => {
 
     return (
         <div className="col-md-6 d-flex justify-content-center">
-            <div className="info-box rounded-1 shadow-sm w-100 my-3 p-4">
-                <h2>
-                    <strong>{props.nombre}</strong>
-                </h2>
-                <div className={`badge ${getBadgeClass(props.estado)}`}>
-                    {props.estado}
+            <div className="info-box rounded-1 shadow-sm w-100 my-3 p-5">
+                
+                <div className="d-flex align-items-center">
+                    <h2 className="mb-0 me-4">
+                        <strong>{props.nombre}</strong>
+                    </h2>
+
+                    <div className={`badge ${getBadgeClass(props.estado)} align-items-center`}> 
+                        {props.estado}
+                    </div>
                 </div>
-                <div className={`badge ${getBadgeClass('UBICACION')} ms-1`}>
-                    {props.localidad}, {props.departamento}
+               
+                
+                <div className="mb-1 text-lowercase">
+                    <i class="fa-solid fa-location-dot me-2"></i>
+                     {props.localidad}, {props.departamento}
                 </div>
+
+                
 
                 {props.estado === 'REUNIDO' ? (
                     <div>
@@ -70,25 +79,24 @@ const InfoDescription = (props) => {
                             </div>
                         ) : (
                             <>
-                                <table class="table table-striped">
+                                <table class="table my-3 me-4">
                                     
                                     <tbody>
                                         <tr>
-                                        <th scope="row">Especie</th>
-                                        <td>Mark</td>
-                                        <td>Otto</td>
-                                        <td>@mdo</td>
+                                            <th scope="row"><span className="ps-2">Especie</span></th>
+                                            <td>{props.especie}</td>   
                                         </tr>
                                         <tr>
-                                        <th scope="row">Raza</th>
-                                        <td>Jacob</td>
-                                        <td>Thornton</td>
-                                        <td>@fat</td>
+                                            <th scope="row"><span className="ps-2">Raza</span></th>
+                                            <td>{props.raza}</td>
                                         </tr>
                                         <tr>
-                                        <th scope="row">Edad</th>
-                                        <td colspan="2">Larry the Bird</td>
-                                        <td>@twitter</td>
+                                            <th scope="row"><span className="ps-2">Edad</span></th>
+                                            <td colspan="2">{props.edad}</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"><span className="ps-2">Sexo</span></th>
+                                            <td colspan="2">{props.sexo}</td>
                                         </tr>
                                     </tbody>
                                     </table>
