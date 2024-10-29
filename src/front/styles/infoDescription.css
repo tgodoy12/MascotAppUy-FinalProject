@@ -1,17 +1,35 @@
 .info-box{
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
 }
 
 .info-nav-link{
-    font-size: medium;
+    font-size: 1rem;
 }
 
 .info-text {
-    font-size: small;
+    font-size: 0.95rem;
 }
 
 .info-location{
     font-size: 0.90rem;
+}
+
+.description {
+    height: 10rem;
+}
+
+.table {
+    font-size: 0.90rem;
+    height: 10rem;
+}
+
+.whatsapp-btn {
+    margin-left: 1rem;
+    
+}
+
+.email-btn {
+    margin-left: auto;  
 }

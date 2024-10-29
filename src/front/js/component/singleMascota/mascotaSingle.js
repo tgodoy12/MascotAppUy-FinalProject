@@ -57,6 +57,7 @@ const MascotaSingle = (props) => {
                             descripcion={props.descripcion} 
                             localidad={props.localidad} 
                             departamento={props.departamento}
+                            telefono={props.telefono}
                         />
                         
 

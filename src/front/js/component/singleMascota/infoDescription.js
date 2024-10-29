@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../../../styles/infoDescription.css"
+import { Link } from "react-router-dom";
 
 const InfoDescription = (props) => {
 
@@ -33,6 +34,21 @@ const InfoDescription = (props) => {
                     <div className={`badge ${getBadgeClass(props.estado)} align-items-center`}> 
                         {props.estado}
                     </div>
+
+                    <div role="button" className="email-btn">
+                            <Link to={`mailto:${props.email}`} target="_blank" rel="noopener noreferrer">
+                                <i class="fa-solid fa-square-envelope fa-2xl"></i>
+                            </Link>
+                        </div>
+                    
+                    {props.telefono && (
+                        <div role="button" className="whatsapp-btn">
+                            <Link to={`https://wa.me/598${props.telefono}?text=Hola%20vi%20tu%20publicacion%20en%20MascotApp`} target="blank" rel="noopener noreferrer">
+                                <i class="fa-brands fa-square-whatsapp fa-2xl"></i>
+                            </Link>
+                        </div>
+                    )}
+                    
                 </div>
                
                 
@@ -72,7 +88,7 @@ const InfoDescription = (props) => {
                         </ul>
 
                         {navItem === "descripcion" ? (
-                            <div className="description mt-4 border p-3">
+                            <div className="description mt-4 p-3">
 
                                 <p className="info-text">{props.descripcion}</p>
 
