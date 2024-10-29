@@ -68,7 +68,7 @@ const MascotaSingle = (props) => {
 
                         {/* El mapa se muestra únicamente para mascotas de Estado perdido, encontrado y adopción */}
                         {props.estado === 'PERDIDO' || props.estado === 'ENCONTRADO' || props.estado === 'ADOPCION' ? (
-                            <div className="col-md-12" style={{ minHeight: "200px", display: "flex" }}>
+                            <div className="d-flex col-md-12" style={{ minHeight: "15rem" }}>
                                 <MapComp mapHeight="100%" mapWidth="100%" mapZoom={12} mascotaCoords={{ coord_x: props.coord_x, coord_y: props.coord_y }} />
                             </div>
                         ) : ("")}

@@ -52,7 +52,7 @@ const InfoDescription = (props) => {
                 </div>
                
                 
-                <div className="mb-1 text-lowercase ms-2">
+                <div className="mb-1 text-lowercase ms-1">
                     <i class="fa-solid fa-location-dot me-2"></i>
                     <span className="info-location">{props.localidad}, {props.departamento}</span>
                 </div>
@@ -88,14 +88,14 @@ const InfoDescription = (props) => {
                         </ul>
 
                         {navItem === "descripcion" ? (
-                            <div className="description mt-4 p-3">
+                            <div className="description mt-4 p-4 bg-light">
 
                                 <p className="info-text">{props.descripcion}</p>
 
                             </div>
                         ) : (
                             <>
-                                <table class="table my-3 me-4">
+                                <table className="table my-3 me-4 bg-light">
                                     
                                     <tbody>
                                         <tr>
