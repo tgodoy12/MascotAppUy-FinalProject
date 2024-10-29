@@ -19,7 +19,7 @@ import { AgregarMascota } from './pages/agregarMascota';
 import AllMascotasEncontradas from "./pages/allMascotasEncontradas.jsx";
 import AllMascotasPerdidas from "./pages/allMascotasPerdidas.jsx";
 import MapView from "./pages/mapView.js";
-import { VistaMascota } from "./pages/vistaMascota.js";
+import { SingleMascota } from "./pages/singleMascota.js";
 // import { MiMascota } from "./pages/miMascota.js";
 import PerfilMock from "./pages/perfilMock.js";
 import { Frecuentes } from "./pages/frecuentes.js";
@@ -52,7 +52,7 @@ const Layout = () => {
                         <Route element={<AgregarMascota />} path="/agregarmascota" />
                         <Route element={<MapView />} path="/mapa" />
                         <Route element={<PerfilMock />} path="/profile" />
-                        <Route path="/mascota/:theid" element={<VistaMascota />} />
+                        <Route path="/mascota/:theid" element={<SingleMascota />} />
 
                         <Route element={<MascotasAdopcion />} path="/mascotas-adopcion" />
                         <Route element={<MascotasReunidos />} path="/mascotas-reunidos" />
