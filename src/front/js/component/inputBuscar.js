@@ -60,7 +60,11 @@ const InputBuscar = () => {
 
     return (
         
-            <div className="input-group mb-3 position-relative">
+            <div className="input-group mb-3 ">
+                {/* <div>
+                <h3 className="fw-light mb-4">Busca aquí a tu mascota</h3>
+                </div> */}
+                
                     <input
                         type="text"
                         className="form-control"

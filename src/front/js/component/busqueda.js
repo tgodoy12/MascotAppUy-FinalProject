@@ -5,6 +5,7 @@ import "../../styles/busqueda.css";
 import { Link as ScrollLink } from "react-scroll";
 import Swal from 'sweetalert2';
 import InputBuscar from "./inputBuscar";
+import backgroundImage from "../../img/home-image.png";
 
 
 export const Busqueda = () => {
@@ -33,13 +34,18 @@ export const Busqueda = () => {
 
 
     return (
-        <div className="busqueda row py-5 py-md-5 py-lg-5">
-            <style>@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap')</style>
+        <div className="busqueda row py-5 py-md-5 py-lg-5"
+            style={{ backgroundImage: `url(${backgroundImage})` }}>
+           
             <div className="col-lg-6 col-md-8 mx-auto text-center">
-                <h1 className="mb-5 pb-5">Bienvenidos a MascotApp</h1>
-                <h3 className="fw-light mb-4">¿Perdiste a tu mascota?</h3>
+                {/* <h1 className="mb-5 pb-5">Bienvenidos a MascotApp</h1> */}
                 
-                <InputBuscar/>
+                <div className="search-box">
+                    <h3 className="fw-light mb-4">Busca aquí a tu mascota</h3>
+                
+                    <InputBuscar/>
+                </div>
+                
 
                 <div className="divider-container mb-4 mt-5">
                     <hr className="divider-line" />

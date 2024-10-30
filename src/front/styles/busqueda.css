@@ -1,33 +1,33 @@
 .busqueda {
     min-height: 100vh;
-    background: 
-        linear-gradient(150deg, #040926 70%, #FF8A5B 180%),
-        linear-gradient(330deg, #040926 70%, #FF8A5B 180%);
-    color: #E0E1DD;
-    background-blend-mode:color-dodge;
     align-items: center;
-    font-family: "Montserrat", sans-serif;
+    background-size: cover;
+
 }
 
-.busqueda-contenedor {
-    background: 
+.search-box {
+    background-color: rgba(255, 255, 255, 0.6); /* Color blanco con 70% de opacidad */
+    padding: 20px; /* Añade padding para un espacio interno */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+/* 
+background: 
         linear-gradient(150deg, #040926 70%, #FF8A5B 180%),
         linear-gradient(330deg, #040926 70%, #FF8A5B 180%);
     color: #E0E1DD;
-    background-blend-mode:color-dodge;
-    align-items: center;
-    font-family: "Montserrat", sans-serif;
-}
+    background-blend-mode:color-dodge; */
+
 
 .form-control{
-    border-radius: 30px 0 0 30px;
+    border-radius: 10px;
     border: none;
     padding: 15px;
     font-size: 1.1rem;
 }
 
 .buscar{
-    border-radius: 0 30px 30px 0;
+    border-radius: 10px;
     padding: 15px 20px;
     background-color: #EA526F;
     border: 1.5px solid #EA526F;
