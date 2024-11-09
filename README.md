@@ -21,11 +21,11 @@ MascotApp es una aplicación web diseñada para ayudar a los usuarios a encontra
 
 1. Clona el repositorio:
     ```bash
-    git clone https://github.com/tu-usuario/mascotapp.git
+    git clone https://github.com/tu-usuario/MascotAppUy-FinalProject.git
     ```
 2. Navega al directorio del proyecto:
     ```bash
-    cd mascotapp
+    cd MascotAppUy-FinalProject
     ```
 3. Configura el backend con las credenciales necesarias en un archivo `.env`. Algunas configuraciones necesarias incluyen:
     - `DATABASE_URL`: URL de la base de datos.
