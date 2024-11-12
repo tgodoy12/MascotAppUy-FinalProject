@@ -5,7 +5,7 @@ import "../../styles/busqueda.css";
 import { Link as ScrollLink } from "react-scroll";
 import Swal from 'sweetalert2';
 import InputBuscar from "./inputBuscar";
-import backgroundImage from "../../img/home-image.png";
+import backgroundImage from "../../img/home-image2.jpg";
 
 
 export const Busqueda = () => {

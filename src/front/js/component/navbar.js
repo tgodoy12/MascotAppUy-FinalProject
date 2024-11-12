@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 import { Link, useNavigate, useLocation } from "react-router-dom";
-import logoClaro from "../../img/logoClaro2.png"
-import logoClaroGif from "../../img/logoClaro2.gif"
+import logoClaro from "../../img/pet2.png"
+
 import "../../styles/navbar.css"
 import Swal from 'sweetalert2';
 
@@ -28,7 +28,7 @@ export const Navbar = () => {
   const initial = userName ? userName.charAt(0).toUpperCase() : '';
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark sticky-top">
+    <nav className="navbar navbar-expand-lg navbar-light sticky-top">
       <style>@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap')</style>
       <div className="container-fluid" id="nav">
         
@@ -36,7 +36,7 @@ export const Navbar = () => {
             <Link to="/" className="navbar-brand d-flex align-items-center">
             <div className="image-container d-flex align-items-center pe-0 me-0">
                 <img src={logoClaro} alt="Static Image" className="static-image pb-0" />
-                <img src={logoClaroGif} alt="Animated Image" className="animated-image pb-0" />
+               
             </div>
             </Link>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -48,27 +48,27 @@ export const Navbar = () => {
             <ul className="navbar-nav ms-auto">
                 <li className="nav-item d-flex justify-content-end">
                 <Link to="/mascotas-encontradas" className="nav-link">
-                    <button type="button" className="button-no-border btn btn-outline-light" data-bs-toggle="collapse" data-bs-target="#navbarNav">Encontradas</button>
+                    <button type="button" className="button-no-border btn" data-bs-toggle="collapse" data-bs-target="#navbarNav">Encontradas</button>
                 </Link>
                 </li>
                 <li className="nav-item d-flex justify-content-end">
                 <Link to="/mascotas-perdidas" className="nav-link">
-                    <button type="button" className="button-no-border btn btn-outline-light" data-bs-toggle="collapse" data-bs-target="#navbarNav">Perdidas</button>
+                    <button type="button" className="button-no-border btn" data-bs-toggle="collapse" data-bs-target="#navbarNav">Perdidas</button>
                 </Link>
                 </li>
                 <li className="nav-item d-flex justify-content-end">
                 <Link to="/mascotas-adopcion" className="nav-link">
-                    <button type="button" className="button-no-border btn btn-outline-light" data-bs-toggle="collapse" data-bs-target="#navbarNav">En adopción</button>
+                    <button type="button" className="button-no-border btn" data-bs-toggle="collapse" data-bs-target="#navbarNav">En adopción</button>
                 </Link>
                 </li>
                 <li className="nav-item d-flex justify-content-end">
                 <Link to="/mapa" className="nav-link">
-                    <button type="button" className="button-no-border btn btn-outline-light" data-bs-toggle="collapse" data-bs-target="#navbarNav">Mapa</button>
+                    <button type="button" className="button-no-border btn" data-bs-toggle="collapse" data-bs-target="#navbarNav">Mapa</button>
                 </Link>
                 </li>
                 <li className="nav-item d-flex justify-content-end">
                 <Link to="/mascotas-reunidos" className="nav-link">
-                    <button type="button" className="button-no-border btn btn-outline-light" data-bs-toggle="collapse" data-bs-target="#navbarNav">Reunidas</button>
+                    <button type="button" className="button-no-border btn" data-bs-toggle="collapse" data-bs-target="#navbarNav">Reunidas</button>
                 </Link>
                 </li>
                 
@@ -97,17 +97,17 @@ export const Navbar = () => {
                     {location.pathname !== '/form-login' && (
                     <li className="nav-item d-flex justify-content-end">
                         <Link to="/form-login" className="nav-link">
-                        <button type="button" className="boton-ingresar btn btn-outline-light" data-bs-toggle="collapse" data-bs-target="#navbarNav">Ingresar</button>
+                        <button type="button" className="boton-ingresar btn" data-bs-toggle="collapse" data-bs-target="#navbarNav"><i className="fas fa-sign-in-alt"></i></button>
                         </Link>
                     </li>
                     )}
-                    {location.pathname !== '/form-signup' && (
+                    {/* {location.pathname !== '/form-signup' && (
                     <li className="nav-item d-flex justify-content-end">
                         <Link to="/form-signup" className="nav-link">
                         <button type="button" className="boton-registrarse btn btn-outline-light" data-bs-toggle="collapse" data-bs-target="#navbarNav">Registrarse</button>
                         </Link>
                     </li>
-                    )}
+                    )} */}
                 </>
                 )}
             </ul>
