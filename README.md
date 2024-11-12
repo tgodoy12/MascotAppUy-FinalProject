@@ -1,81 +1,107 @@
-# WebApp boilerplate with React JS and Flask API
+# MascotApp 🐾
 
-Build web applications using React.js for the front end and python/flask for your backend API.
+MascotApp es una aplicación web diseñada para ayudar a los usuarios a encontrar, adoptar y reunificar mascotas con sus dueños. Con una interfaz amigable y diversas funcionalidades, permite la publicación de mascotas perdidas o encontradas, la búsqueda de animales disponibles para adopción y opciones de contacto directo con los dueños.
 
-- Documentation can be found here: https://start.4geeksacademy.com/starters/react-flask
-- Here is a video on [how to use this template](https://www.loom.com/share/f37c6838b3f1496c95111e515e83dd9b)
-- Integrated with Pipenv for package managing.
-- Fast deployment to heroku [in just a few steps here](https://start.4geeksacademy.com/backend/deploy-heroku-posgres).
-- Use of .env file.
-- SQLAlchemy integration for database abstraction.
 
-### 1) Installation:
+> Este proyecto se basa en el [boilerplate de React y Flask de 4Geeks Academy](https://start.4geeksacademy.com/starters/react-flask).
+>
+> **➡️ Sigue estos [primeros pasos de configuración](/TEMPLATE_README.md)** para instalar las dependencias y configurar el entorno, utilizando `pipenv` para la gestión de paquetes.
 
-> If you use Github Codespaces (recommended) or Gitpod this template will already come with Python, Node and the Posgres Database installed. If you are working locally make sure to install Python 3.10, Node 
 
-It is recomended to install the backend first, make sure you have Python 3.8, Pipenv and a database engine (Posgress recomended)
+## Tabla de Contenidos
+- [Instalación](#instalación)
+- [Características](#características)
+- [Tecnologías](#tecnologías)
+- [Uso](#uso)
+- [Capturas](#capturas)
+- [Colaboradores](#colaboradores)
+- [Contribución](#contribución)
 
-1. Install the python packages: `$ pipenv install`
-2. Create a .env file based on the .env.example: `$ cp .env.example .env`
-3. Install your database engine and create your database, depending on your database you have to create a DATABASE_URL variable with one of the possible values, make sure you replace the valudes with your database information:
+## Instalación
 
-| Engine    | DATABASE_URL                                        |
-| --------- | --------------------------------------------------- |
-| SQLite    | sqlite:////test.db                                  |
-| MySQL     | mysql://username:password@localhost:port/example    |
-| Postgress | postgres://username:password@localhost:5432/example |
+1. Clona el repositorio:
+    ```bash
+    git clone https://github.com/tu-usuario/MascotAppUy-FinalProject.git
+    ```
+2. Navega al directorio del proyecto:
+    ```bash
+    cd MascotAppUy-FinalProject
+    ```
+3. Configura el backend con las credenciales necesarias en un archivo `.env`. Algunas configuraciones necesarias incluyen:
+    - `DATABASE_URL`: URL de la base de datos.
+    - `CLOUDINARY_URL`: Credenciales para la integración con Cloudinary.
+    - `JWT_SECRET`: Clave secreta para autenticación.
 
-4. Migrate the migrations: `$ pipenv run migrate` (skip if you have not made changes to the models on the `./src/api/models.py`)
-5. Run the migrations: `$ pipenv run upgrade`
-6. Run the application: `$ pipenv run start`
+4. Instala las dependencias del backend usando `pipenv`:
+    ```bash
+    pipenv install
+    ```
+5. Activa el entorno virtual:
+    ```bash
+    pipenv shell
+    ```
+6. Realiza las migraciones y corre el backend:
+    ```bash
+    pipenv run migrate
+    pipenv run upgrade
+    pipenv run start
+    ```
+7. Instala y configura el frontend:
+    ```bash
+    npm install
+    npm run start
+    ```
 
-> Note: Codespaces users can connect to psql by typing: `psql -h localhost -U gitpod example`
+## Características
 
-### Undo a migration
+1. **Publicación de mascotas:** Los usuarios pueden publicar mascotas perdidas o en adopción, adjuntando imágenes y detalles específicos.
+2. **Filtro de búsqueda:** Los usuarios pueden buscar mascotas por especie, raza, y ubicación, gracias a filtros avanzados.
+3. **Contacto directo:** La aplicación facilita el contacto con los dueños a través de botones directos a WhatsApp y correo electrónico.
+4. **Autenticación:** Los usuarios pueden registrarse y autenticarse a través de JWT y autenticación social como Google.
+5. **Panel de usuario:** Cada usuario cuenta con un perfil donde puede gestionar sus publicaciones, editar la información de sus mascotas, y realizar otras configuraciones.
 
-You are also able to undo a migration by running
+## Tecnologías
 
-```sh
-$ pipenv run downgrade
-```
+### Frontend
+- **React:** Librería para la construcción de interfaces de usuario.
+- **Bootstrap:** Framework CSS para diseño responsivo.
+- **React Router:** Navegación entre componentes.
+- **SweetAlert2:** Librería de alertas y notificaciones.
+- **Google Fonts:** Fuentes personalizadas para mejorar la estética.
 
-### Backend Populate Table Users
+### Backend
+- **Python:** Lenguaje de programación principal.
+- **Flask:** Framework para la creación de API REST.
+- **JWT:** Manejo de autenticación y autorización segura.
+- **SQLAlchemy:** ORM para la gestión de bases de datos.
+- **Cloudinary API:** Servicio de almacenamiento de imágenes.
+- **PostgreSQL:** Base de datos relacional para almacenar la información de usuarios y mascotas.
 
-To insert test users in the database execute the following command:
+## Uso
 
-```sh
-$ flask insert-test-users 5
-```
+1. **Inicio de sesión y registro:** Los usuarios pueden registrarse o iniciar sesión con su cuenta.
+2. **Publicar mascotas:** Después de iniciar sesión, los usuarios pueden agregar mascotas perdidas o en adopción.
+3. **Buscar mascotas:** Utiliza el filtro de búsqueda para encontrar mascotas por especie, localidad y otras características.
+4. **Editar perfil y publicaciones:** Accede a la página de perfil para editar tus datos y gestionar tus publicaciones.
 
-And you will see the following message:
+## Capturas
 
-```
-  Creating test users
-  test_user1@test.com created.
-  test_user2@test.com created.
-  test_user3@test.com created.
-  test_user4@test.com created.
-  test_user5@test.com created.
-  Users created successfully!
-```
+### 1. Página de Inicio
+![Página de inicio](ruta/a/captura_inicio.png)
 
-### **Important note for the database and the data inside it**
+### 2. Página de Publicación de Mascotas
+![Página de Publicación](ruta/a/captura_publicacion.png)
 
-Every Github codespace environment will have **its own database**, so if you're working with more people eveyone will have a different database and different records inside it. This data **will be lost**, so don't spend too much time manually creating records for testing, instead, you can automate adding records to your database by editing ```commands.py``` file inside ```/src/api``` folder. Edit line 32 function ```insert_test_data``` to insert the data according to your model (use the function ```insert_test_users``` above as an example). Then, all you need to do is run ```pipenv run insert-test-data```.
+### 3. Perfil del Usuario
+![Perfil del Usuario](ruta/a/captura_perfil.png)
 
-### Front-End Manual Installation:
+*Estas capturas muestran la interfaz y las funcionalidades principales de MascotApp.*
 
--   Make sure you are using node version 14+ and that you have already successfully installed and runned the backend.
+## Colaboradores
 
-1. Install the packages: `$ npm install`
-2. Start coding! start the webpack dev server `$ npm run start`
+Este proyecto fue desarrollado por un equipo de desarrolladores en el marco del proyecto final del bootcamp de 4Geeks Academy. El equipo trabajó de forma colaborativa en todas las etapas del desarrollo para crear esta plataforma web, aplicando habilidades adquiridas en tecnologías frontend y backend.
 
-## Publish your website!
-
-This boilerplate it's 100% read to deploy with Render.com and Heroku in a matter of minutes. Please read the [official documentation about it](https://start.4geeksacademy.com/deploy).
-
-### Contributors
-
-This template was built as part of the 4Geeks Academy [Coding Bootcamp](https://4geeksacademy.com/us/coding-bootcamp) by [Alejandro Sanchez](https://twitter.com/alesanchezr) and many other contributors. Find out more about our [Full Stack Developer Course](https://4geeksacademy.com/us/coding-bootcamps/part-time-full-stack-developer), and [Data Science Bootcamp](https://4geeksacademy.com/us/coding-bootcamps/datascience-machine-learning).
-
-You can find other templates and resources like this at the [school github page](https://github.com/4geeksacademy/).
+- **[Trilce Godoy]** - Fullstack Developer
+- **[Agustín Soto]** - Fullstack Developer
+- **[Leticia Machado]** - Fullstack Developer
+- **[Paulina Pereyra]** - Fullstack Developer
